@@ -90,14 +90,43 @@ alert('Welcome to RockPaperScissors! Please write "Rock", "Paper" or "Scissors" 
 
 
 function game () {
-    let playerScore;
-    let computerScore;
+    let playerScore = 0;
+    let computerScore = 0;
     let score;
 
-    for (let i = 0; i <5; i++) {
+    for (let i = 0; i < 5; i++) {
         score = playRound(getComputerChoice());
+
         switch (score) {
-            
+            case 0:
+                computerScore = computerScore + 1;
+                break;
+
+            case 1:
+
+                break;
+
+            case 2:
+                playerScore = playerScore + 1;
+                break;
         }
+
+        if (i < 4){
+            alert(`Round ${i+2} out of 5. Your score: ${playerScore}. My Score: ${computerScore}.`)
+            }
+    }
+
+    if (playerScore > computerScore) {
+        alert(`You win! Your score: ${playerScore}. My Score: ${computerScore}.`);
+    }
+
+    else if (playerScore < computerScore) {
+        alert(`You lose! Your score: ${playerScore}. My Score: ${computerScore}.`);
+    }
+
+    else if (playerScore === computerScore) {
+        alert(`It's a tie. Your score: ${playerScore}. My Score: ${computerScore}.`);
     }
 }
+
+game();
