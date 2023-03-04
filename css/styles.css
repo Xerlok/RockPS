@@ -60,6 +60,11 @@ body {
     gap: 4rem;
 }
 
+#result-container {
+    display: flex;
+    gap: 2rem;
+}
+
 #player-choice-text,
 #pc-choice-text {
     text-align: center;
@@ -104,3 +109,4 @@ button:hover {
 button:active {
     background-color: #777b77;
 }
+

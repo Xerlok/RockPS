@@ -1,6 +1,3 @@
-const pScore = document.getElementById('player-result-box');
-const cScore = document.getElementById('pc-result-box');
-
 function getComputerChoice() {
     let computerChoice;
     let randomNumber;
@@ -30,6 +27,9 @@ function playRound(computerSelection, playerSelection)  {
     const pcImg = document.querySelector('#pc-img');
     const playerImg = document.querySelector('#player-img');
     const resultText = document.querySelector('#result');
+    const pScore = document.getElementById('player-result-box');
+    const cScore = document.getElementById('pc-result-box');
+
 
     if (playerSelection === 'ROCK') {
         playerImg.src = '../img/rock.png';
@@ -100,17 +100,44 @@ function playRound(computerSelection, playerSelection)  {
         }
     }
 
+
     pScore.textContent = parseInt(pScore.textContent) + playerScore;
     cScore.textContent = parseInt(cScore.textContent) + pcScore;
 
     if (pScore.textContent == 5) {
         resultText.textContent = 'You win filthy human!';
         resultText.style.cssText = ('color:green; font-size: 5rem');
+
+        const resultDiv = document.querySelector('#result-container');
+        const replayButton = document.createElement('button');
+        replayButton.setAttribute('id', 'replay');
+        replayButton.onclick = function () {
+            document.getElementById("buttons").style.display = "block";
+            document.getElementById("h1").style.display = "block";
+            location.reload(); 
+          };
+        replayButton.textContent = 'Play again?';
+        resultDiv.appendChild(replayButton);
+        document.getElementById("buttons").style.display = "none";
+        document.getElementById("h1").style.display = "none";
     }
 
     else if (cScore.textContent == 5) {
         resultText.textContent = 'I win stupid human!';
         resultText.style.cssText = ('color:red; font-size: 5rem');
+
+        const resultDiv = document.querySelector('#result-container');
+        const replayButton = document.createElement('button');
+        replayButton.setAttribute('id', 'replay');
+        replayButton.onclick = function () {
+            document.getElementById("buttons").style.display = "block";
+            document.getElementById("h1").style.display = "block";
+            location.reload(); 
+          };
+        replayButton.textContent = 'Play Again?';
+        resultDiv.appendChild(replayButton);
+        document.getElementById("buttons").style.display = "none";
+        document.getElementById("h1").style.display = "none";
     }
 
 
