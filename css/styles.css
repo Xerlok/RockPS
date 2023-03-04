@@ -18,6 +18,18 @@ body {
     gap: 1rem;
 }
 
+#score-text {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+#score {
+    width: 20rem;
+    height: 5rem;
+    border: 1px solid black;
+    background-color: white;
+}
+
 #results-panel {
     display: flex;
     gap: 4rem;

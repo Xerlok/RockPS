@@ -20,113 +20,113 @@ function getComputerChoice() {
 
 }
 
-function playRound(computerSelection)  {
-    let playerSelection;
+function playRound(computerSelection, playerSelection)  {
     let result;
-
-    playerSelection = prompt();
     playerSelection = playerSelection.toUpperCase();
+    const pcImg = document.querySelector('#pc-img');
+    const playerImg = document.querySelector('#player-img');
+    const resultText = document.querySelector('#result');
+
+    console.log(playerSelection, computerSelection);
 
     if (playerSelection === 'ROCK') {
+        playerImg.src = '../img/rock.png';
         switch(computerSelection) {
             case 'Rock':
-                alert(`Tie. You chose ${playerSelection} I chose ${computerSelection}`);
+                pcImg.src = '../img/rock.png';
+                resultText.textContent = `Tie.`;
+                resultText.style.color = 'black';
                 result = 1;
                 break;
             case 'Paper':
-                alert(`You lose! :^) You chose ${playerSelection} I chose ${computerSelection}`);
+                pcImg.src = '../img/paper.png';
+                resultText.textContent = `You lose! :^)`;
+                resultText.style.color = 'red';
                 result = 0;
                 break;
             case 'Scissors':
-                alert(`You win! :^( You chose ${playerSelection} I chose ${computerSelection}`);
+                pcImg.src = '../img/scissors.png';
+                resultText.textContent = `You win!`;
+                resultText.style.color = 'green';
                 result = 2;
                 break;
         }
     }
 
     else if (playerSelection === 'PAPER') {
+        playerImg.src = '../img/paper.png';
         switch(computerSelection) {
             case 'Rock':
-                alert(`You win! :^( You chose ${playerSelection} I chose ${computerSelection}`);
+                pcImg.src = '../img/rock.png';
+                resultText.textContent = `You win!`;
+                resultText.style.color = 'green';
                 result = 2;
                 break;
             case 'Paper':
-                alert(`Tie. You chose ${playerSelection} I chose ${computerSelection}`);
+                pcImg.src = '../img/paper.png';
+                resultText.textContent = `Tie.`;
+                resultText.style.color = 'black';
                 result = 1;
                 break;
             case 'Scissors':
-                alert(`You lose! :^) You chose ${playerSelection} I chose ${computerSelection}`);
+                pcImg.src = '../img/scissors.png';
+                resultText.textContent = `You lose! :^)`;
+                resultText.style.color = 'red';
                 result = 0;
                 break;
         }
     }
 
     else if (playerSelection === 'SCISSORS') {
+        playerImg.src = '../img/scissors.png';
         switch(computerSelection) {
             case 'Rock':
-                alert(`You lose! :^) You chose ${playerSelection} I chose ${computerSelection}`);
+                pcImg.src = '../img/rock.png';
+                resultText.textContent = `You lose! :^)`;
+                resultText.style.color = 'red';
                 result = 0;
                 break;
             case 'Paper':
-                alert(`You win! :^( You chose ${playerSelection} I chose ${computerSelection}`);
+                pcImg.src = '../img/paper.png';
+                resultText.textContent = `You win!`;
+                resultText.style.color = 'green';
                 result = 2;
                 break;
             case 'Scissors':
-                alert(`Tie. You chose ${playerSelection} I chose ${computerSelection}`);
+                pcImg.src = '../img/scissors.png';
+                resultText.textContent = `Tie.`;
+                resultText.style.color = 'black';
                 result = 1;
                 break;
         }
     }
 
     else {
-        alert('Please write correct word.')
+        resultText.textContent ='Please write correct word.';
     }
+
 
     return result;
 }
 
-
-/* alert('Welcome to RockPaperScissors! Please write "Rock", "Paper" or "Scissors" in the next window'); */
-
-
 function game () {
-    let playerScore = 0;
-    let computerScore = 0;
-    let score;
+    const btns = document.querySelectorAll('button');
+    btns.forEach((btn) => {btn.addEventListener('click', () => {playRound(getComputerChoice(), btn.id);});
+    }); 
 
-    for (let i = 0; i < 5; i++) {
-        score = playRound(getComputerChoice());
-
-        switch (score) {
-            case 0:
-                computerScore = computerScore + 1;
-                break;
-
-            case 1:
-
-                break;
-
-            case 2:
-                playerScore = playerScore + 1;
-                break;
-        }
-
-        if (i < 4){
-            alert(`Round ${i+2} out of 5. Your score: ${playerScore}. My Score: ${computerScore}.`)
-            }
-    }
-
-    if (playerScore > computerScore) {
-        alert(`You win! Your score: ${playerScore}. My Score: ${computerScore}.`);
+    /* if (playerScore > computerScore) {
+        resultText.textcontent =(`You win! Your score: ${playerScore}. My Score: ${computerScore}.`);
     }
 
     else if (playerScore < computerScore) {
-        alert(`You lose! Your score: ${playerScore}. My Score: ${computerScore}.`);
+        resultText.textcontent =(`You lose! Your score: ${playerScore}. My Score: ${computerScore}.`);
     }
 
     else if (playerScore === computerScore) {
-        alert(`It's a tie. Your score: ${playerScore}. My Score: ${computerScore}.`);
-    }
-}
+        resultText.textcontent =(`It's a tie. Your score: ${playerScore}. My Score: ${computerScore}.`);
+    } */
+ }  
 
-/* game(); */
+game();
+
+
