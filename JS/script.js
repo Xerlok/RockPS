@@ -86,7 +86,7 @@ function playRound(computerSelection)  {
 }
 
 
-alert('Welcome to RockPaperScissors! Please write "Rock", "Paper" or "Scissors" in the next window');
+/* alert('Welcome to RockPaperScissors! Please write "Rock", "Paper" or "Scissors" in the next window'); */
 
 
 function game () {
@@ -129,4 +129,4 @@ function game () {
     }
 }
 
-game();
+/* game(); */

@@ -6,8 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="JS/script.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    
+    <div id="container">
+        <div id="score-panel">
+            <div id="score-text" class="text">Your score:</div>
+
+            <div id="score"></div>
+        </div>
+
+        <div id="results-panel">
+            <div id="player-choice">
+                <div id="player-choice-text" class="text">Your choice:</div>
+
+                <img id="player-img" src="/img/rock.png" alt="computerChoice"></img>
+            </div>
+
+            <div id="pc-choice">
+                <div id="pc-choice-text" class="text">I get:</div>
+
+                <img id="pc-img" src="/img/paper.png" alt="computerChoice"></img>
+            </div>
+        </div>
+
+        <div id="result" class="text">You win/loose</div>
+
+        <h1>Make your choice:</h1>
+
+        <div id="buttons">
+            <button id="Rock">Rock</button>
+            <button id="Paper">Paper</button>
+            <button id="Scissors">Scissors</button>
+        </div>
+    </div>
 </body>
 </html>
