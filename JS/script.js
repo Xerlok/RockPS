@@ -32,21 +32,21 @@ function playRound(computerSelection, playerSelection)  {
 
 
     if (playerSelection === 'ROCK') {
-        playerImg.src = './img/rock.png';
+        playerImg.src = '../img/rock.png';
         switch(computerSelection) {
             case 'Rock':
-                pcImg.src = './img/rock.png';
+                pcImg.src = '../img/rock.png';
                 resultText.textContent = `Tie.`;
                 resultText.style.color = 'black';
                 break;
             case 'Paper':
-                pcImg.src = './img/paper.png';
+                pcImg.src = '../img/paper.png';
                 resultText.textContent = `You lose! :^)`;
                 resultText.style.color = 'red';
                 pcScore += 1;
                 break;
             case 'Scissors':
-                pcImg.src = './img/scissors.png';
+                pcImg.src = '../img/scissors.png';
                 resultText.textContent = `You win!`;
                 resultText.style.color = 'green';
                 playerScore += 1;
@@ -55,21 +55,21 @@ function playRound(computerSelection, playerSelection)  {
     }
 
     else if (playerSelection === 'PAPER') {
-        playerImg.src = './img/paper.png';
+        playerImg.src = '../img/paper.png';
         switch(computerSelection) {
             case 'Rock':
-                pcImg.src = './img/rock.png';
+                pcImg.src = '../img/rock.png';
                 resultText.textContent = `You win!`;
                 resultText.style.color = 'green';
                 playerScore += 1;
                 break;
             case 'Paper':
-                pcImg.src = './img/paper.png';
+                pcImg.src = '../img/paper.png';
                 resultText.textContent = `Tie.`;
                 resultText.style.color = 'black';
                 break;
             case 'Scissors':
-                pcImg.src = './img/scissors.png';
+                pcImg.src = '../img/scissors.png';
                 resultText.textContent = `You lose! :^)`;
                 resultText.style.color = 'red';
                 pcScore += 1;
@@ -78,22 +78,22 @@ function playRound(computerSelection, playerSelection)  {
     }
 
     else if (playerSelection === 'SCISSORS') {
-        playerImg.src = './img/scissors.png';
+        playerImg.src = '../img/scissors.png';
         switch(computerSelection) {
             case 'Rock':
-                pcImg.src = './img/rock.png';
+                pcImg.src = '../img/rock.png';
                 resultText.textContent = `You lose! :^)`;
                 resultText.style.color = 'red';
                 pcScore += 1;
                 break;
             case 'Paper':
-                pcImg.src = './img/paper.png';
+                pcImg.src = '../img/paper.png';
                 resultText.textContent = `You win!`;
                 resultText.style.color = 'green';
                 playerScore += 1;
                 break;
             case 'Scissors':
-                pcImg.src = './img/scissors.png';
+                pcImg.src = '../img/scissors.png';
                 resultText.textContent = `Tie.`;
                 resultText.style.color = 'black';
                 break;
