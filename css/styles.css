@@ -18,16 +18,41 @@ body {
     gap: 1rem;
 }
 
+#score-panel {
+    display: flex;
+    flex-direction: column;
+}
+
 #score-text {
     text-align: center;
     padding: 0.5rem;
 }
 
 #score {
+    display: flex;
+    justify-content: space-evenly;
     width: 20rem;
+    height: 10rem;
+    border: 0.2rem solid black;
+    background-color: white;
+}
+
+#player-result,
+#pc-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#player-result-box,
+#pc-result-box {
+    width: 5rem;
     height: 5rem;
     border: 1px solid black;
     background-color: white;
+    font-size: 4rem;
+    text-align: center;
 }
 
 #results-panel {
@@ -50,7 +75,7 @@ img {
     height: auto;
     border-style: solid;
     border-radius: 0.5rem;
-    border-color: silver;
+    border-color: black;
     width: 11rem;
     height: 11rem;
 }
